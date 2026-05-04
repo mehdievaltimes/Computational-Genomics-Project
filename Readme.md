@@ -66,7 +66,9 @@ Cellpose was run on a 512×512 centre crop of the morphology image (`morphology_
 
 The heatmap shows mean expression of canonical marker groups per predicted cell type. A well-calibrated classifier would show a diagonal pattern — each marker group peaking in its corresponding predicted type. The eight marker groups evaluated were: fibroblast (`COL1A1`, `COL1A2`, `DCN`, `LUM`, `PDGFRA`), myofibroblast (`ACTA2`, `TAGLN`, `MYL9`, `COL3A1`), endothelial (`PECAM1`, `VWF`, `KDR`, `RAMP2`, `ENG`), pericyte (`RGS5`, `PDGFRB`, `MCAM`, `CSPG4`), vascular smooth muscle (`ACTA2`, `MYH11`, `TAGLN`, `MYLK`), cycling (`MKI67`, `TOP2A`, `UBE2C`, `CENPF`), immune (`PTPRC`, `CD3D`, `CD3E`, `MS4A1`, `LYZ`), and epithelial (`EPCAM`, `KRT8`, `KRT18`, `KRT19`).
 
-Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were absent from the shared gene set, limiting what the heatmap can confirm. The degree to which the expected diagonal pattern appears, and which cell types show the clearest enrichment in their expected marker groups, should be described here after running notebook 04.
+Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were absent from the shared gene set, limiting what the heatmap can confirm. 
+
+###The degree to which the expected diagonal pattern appears, and which cell types show the clearest enrichment in their expected marker groups, should be described here after running notebook 04.
 
 ### Confidence and spatial distribution
 
