@@ -1,0 +1,83 @@
+cell_id,before_score,after_score,candidate_after_score,before_type,after_type,candidate_after_type,accepted,decision,improvement
+cell_1,0.1237262571135552,0.1237262571135552,0.12044430101939108,endothelial cell of artery,endothelial cell of artery,endothelial cell of artery,False,rejected_no_improvement,0.0
+cell_2,0.0895674456150476,0.0895674456150476,0.07413452879337662,fibroblast,fibroblast,pericyte,False,rejected_no_improvement,0.0
+cell_3,0.1542469997299003,0.1542469997299003,,endothelial cell,endothelial cell,,False,rejected_no_center_cell,0.0
+cell_4,0.1002397532836103,0.1002397532836103,,fibroblast,fibroblast,,False,rejected_no_center_cell,0.0
+cell_5,0.0989145169502436,0.0989145169502436,0.07316035256174748,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_6,0.0101603804434826,0.019324908136778056,0.019324908136778056,vascular associated smooth muscle cell,vein endothelial cell,vein endothelial cell,True,accepted_improved,0.009164527693295456
+cell_7,0.099793467379405,0.099793467379405,0.0933266236164026,fibroblast,fibroblast,fibroblast,False,rejected_no_improvement,0.0
+cell_8,0.1452466013589321,0.1452466013589321,0.14482569494539144,myofibroblast cell,myofibroblast cell,fibroblast,False,rejected_no_improvement,0.0
+cell_9,0.1075434983424123,0.1075434983424123,0.10502986810204484,vascular associated smooth muscle cell,vascular associated smooth muscle cell,vascular associated smooth muscle cell,False,rejected_no_improvement,0.0
+cell_10,0.0332263707601387,0.0332263707601387,,pericyte,pericyte,,False,rejected_no_center_cell,0.0
+cell_11,0.0747488540346365,0.0747488540346365,0.03133624639873668,vein endothelial cell,vein endothelial cell,pericyte,False,rejected_no_improvement,0.0
+cell_12,0.1123902231009448,0.1123902231009448,0.10664365728860828,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_13,0.1039501615464662,0.10395016154646627,0.10395016154646627,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,6.938893903907228e-17
+cell_14,0.1249171799924644,0.1249171799924644,0.11948059857488186,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_15,0.1958792172053609,0.1958792172053609,0.19491674767369807,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_16,0.0952496414502628,0.0952496414502628,,endothelial cell,endothelial cell,,False,rejected_no_center_cell,0.0
+cell_17,0.1598539148030936,0.1598539148030936,,vein endothelial cell,vein endothelial cell,,False,rejected_no_center_cell,0.0
+cell_18,0.1515848239954636,0.1515848239954636,0.1476525667354649,endothelial cell,endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_19,0.1300946463411126,0.13741836800413437,0.13741836800413437,endothelial cell,vein endothelial cell,vein endothelial cell,True,accepted_improved,0.007323721663021782
+cell_20,0.1190557275717333,0.1201407722094536,0.1201407722094536,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,0.0010850446377203005
+cell_21,0.1034453482541205,0.1034453482541205,0.10150709244544087,pericyte,pericyte,pericyte,False,rejected_no_improvement,0.0
+cell_22,0.1099800985173516,0.11122426143898874,0.11122426143898874,pericyte,pericyte,pericyte,True,accepted_improved,0.0012441629216371347
+cell_23,0.1083986049665063,0.1083986049665063,,pericyte,pericyte,,False,rejected_no_center_cell,0.0
+cell_24,0.0532108560350025,0.05321085603500256,0.05321085603500256,fibroblast,fibroblast,fibroblast,True,accepted_improved,5.551115123125783e-17
+cell_25,0.1201200822055032,0.1201200822055032,0.10708437004149533,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_26,0.1532493019981955,0.1532493019981955,,vein endothelial cell,vein endothelial cell,,False,rejected_no_center_cell,0.0
+cell_27,0.148764258736804,0.15210940277579482,0.15210940277579482,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,0.0033451440389908327
+cell_28,0.1038344504861767,0.1038344504861767,0.09603615366233176,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_29,0.1419933275961471,0.1419933275961471,0.12925603647580602,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_30,0.1271533199283328,0.1271533199283328,0.10003597146061706,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_31,0.1501928235702172,0.1501928235702172,,endothelial cell,endothelial cell,,False,rejected_no_center_cell,0.0
+cell_32,0.0828562445336447,0.0828562445336447,0.05618455326769928,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_33,0.1231812159974258,0.1231812159974258,0.1150628913572449,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_34,0.1053436299485385,0.1053436299485385,0.09851684709150693,fibroblast,fibroblast,fibroblast,False,rejected_no_improvement,0.0
+cell_35,0.0881175124519519,0.08811751245195198,0.08811751245195198,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,8.326672684688674e-17
+cell_36,0.0472189885016028,0.0472189885016028,0.04713964728278773,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_37,0.0901505494258104,0.0901505494258104,0.06913574059273137,endothelial cell of vascular tree,endothelial cell of vascular tree,endothelial cell of artery,False,rejected_no_improvement,0.0
+cell_38,0.1696196113117256,0.1696196113117256,0.1584673397958523,fibroblast,fibroblast,fibroblast,False,rejected_no_improvement,0.0
+cell_39,0.1029328936965892,0.1029328936965892,0.10043544772402735,pericyte,pericyte,pericyte,False,rejected_no_improvement,0.0
+cell_40,0.041225019789599,0.041225019789599,0.03697240446316386,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_41,0.0202000895389495,0.0202000895389495,0.009580535202373642,endothelial cell of vascular tree,endothelial cell of vascular tree,endothelial cell of vascular tree,False,rejected_no_improvement,0.0
+cell_42,0.1262376647762303,0.12802420703089626,0.12802420703089626,fibroblast,fibroblast,fibroblast,True,accepted_improved,0.001786542254665957
+cell_43,0.0629260171600307,0.0629260171600307,0.04921735047856486,myofibroblast cell,myofibroblast cell,endothelial cell of vascular tree,False,rejected_no_improvement,0.0
+cell_44,0.1511632590975457,0.1511632590975457,0.14936747085152707,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_45,0.1432349438272714,0.1432349438272714,0.1272019538142229,endothelial cell,endothelial cell,pericyte,False,rejected_no_improvement,0.0
+cell_46,0.1228187942809344,0.1228187942809344,0.12157793160688142,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_47,0.0458167835453407,0.04652201380542084,0.04652201380542084,pericyte,pericyte,pericyte,True,accepted_improved,0.0007052302600801391
+cell_48,0.1177605358838548,0.11950016117990388,0.11950016117990388,pericyte,pericyte,pericyte,True,accepted_improved,0.0017396252960490827
+cell_49,0.0729621414774816,0.0729621414774816,,endothelial cell of vascular tree,endothelial cell of vascular tree,,False,rejected_no_center_cell,0.0
+cell_50,0.1178027634666062,0.1178027634666062,0.1141234524646081,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_51,0.0327025555475852,0.034922401264129974,0.034922401264129974,endothelial cell of artery,endothelial cell of artery,endothelial cell of artery,True,accepted_improved,0.002219845716544773
+cell_52,0.0624011271042214,0.0624011271042214,0.06109992062538645,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_53,0.1317668671638358,0.1317668671638358,,endothelial cell,endothelial cell,,False,rejected_no_center_cell,0.0
+cell_54,0.1385446488894526,0.1385446488894526,0.12974759695335386,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_55,0.1083580547439464,0.11088021909427655,0.11088021909427655,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,0.002522164350330147
+cell_56,0.1486960147966228,0.1486960147966228,0.1481175641490305,myofibroblast cell,myofibroblast cell,myofibroblast cell,False,rejected_no_improvement,0.0
+cell_57,0.0745215101836409,0.07511651948763105,0.07511651948763105,fibroblast,fibroblast,fibroblast,True,accepted_improved,0.0005950093039901599
+cell_58,0.0631681518582719,0.0631681518582719,0.06214727231062937,pericyte,pericyte,pericyte,False,rejected_no_improvement,0.0
+cell_59,0.0833066489889737,0.0860942317425823,0.0860942317425823,endothelial cell of artery,endothelial cell of artery,endothelial cell of artery,True,accepted_improved,0.002787582753608589
+cell_60,0.0628641668365634,0.0628641668365634,0.06170551151188983,vein endothelial cell,vein endothelial cell,fibroblast,False,rejected_no_improvement,0.0
+cell_61,0.1057461948819749,0.1057461948819749,0.10368002386924824,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_62,0.1221245336941853,0.1221245336941853,0.12147881440880512,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_63,0.0800476293720404,0.0800476293720404,0.061281258610913464,endothelial cell,endothelial cell,endothelial cell of artery,False,rejected_no_improvement,0.0
+cell_64,0.0799046000693942,0.0799046000693942,0.07427439797488965,fibroblast,fibroblast,pericyte,False,rejected_no_improvement,0.0
+cell_65,0.1036360071014388,0.1036360071014388,0.10162879922812856,endothelial cell,endothelial cell,endothelial cell,False,rejected_no_improvement,0.0
+cell_66,0.0442149098188269,0.04642439484972119,0.04642439484972119,myofibroblast cell,myofibroblast cell,myofibroblast cell,True,accepted_improved,0.002209485030894291
+cell_67,0.1363860408793659,0.1363860408793659,,vein endothelial cell,vein endothelial cell,,False,rejected_no_center_cell,0.0
+cell_68,0.1155431198932664,0.11698006678018621,0.11698006678018621,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,0.0014369468869198099
+cell_69,0.1260315223163367,0.12675408830741033,0.12675408830741033,endothelial cell,endothelial cell,endothelial cell,True,accepted_improved,0.0007225659910736204
+cell_70,0.0759052157199364,0.0759052157199364,0.07528803309114994,fibroblast,fibroblast,fibroblast,False,rejected_no_improvement,0.0
+cell_71,0.0175995268969758,0.0175995268969758,,endothelial cell of artery,endothelial cell of artery,,False,rejected_no_center_cell,0.0
+cell_72,0.0165240914782142,0.0165240914782142,0.015046006829714137,endothelial cell of vascular tree,endothelial cell of vascular tree,endothelial cell of vascular tree,False,rejected_no_improvement,0.0
+cell_73,0.0997020121324884,0.0997020121324884,0.0967272394130052,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_74,0.1418187939170209,0.1418187939170209,0.1418187939170207,vein endothelial cell,vein endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_75,0.0701086162270894,0.0701086162270894,0.044724029058418324,fibroblast,fibroblast,pericyte,False,rejected_no_improvement,0.0
+cell_76,0.0823544836322315,0.0823730363049898,0.0823730363049898,fibroblast,fibroblast,fibroblast,True,accepted_improved,1.8552672758298527e-05
+cell_77,0.0979826776327919,0.0979826776327919,0.0967792637601516,myofibroblast cell,myofibroblast cell,myofibroblast cell,False,rejected_no_improvement,0.0
+cell_78,0.1293241248398163,0.1293241248398163,0.1156588885655554,endothelial cell,endothelial cell,vein endothelial cell,False,rejected_no_improvement,0.0
+cell_79,0.0964804532026169,0.0964804532026169,0.06983480236056452,endothelial cell,endothelial cell,fibroblast,False,rejected_no_improvement,0.0
+cell_80,0.1185282630569942,0.1185282630569942,,vein endothelial cell,vein endothelial cell,,False,rejected_no_center_cell,0.0
+cell_81,0.0878221702347177,0.0878221702347177,,endothelial cell,endothelial cell,,False,rejected_no_center_cell,0.0
+cell_82,0.0353198236182543,0.0353198236182543,,endothelial cell of artery,endothelial cell of artery,,False,rejected_no_center_cell,0.0

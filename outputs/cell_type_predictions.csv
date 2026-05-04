@@ -1,0 +1,83 @@
+,predicted_cell_type,best_similarity
+cell_1,endothelial cell of artery,0.12372625711355528
+cell_2,fibroblast,0.08956744561504766
+cell_3,endothelial cell,0.15424699972990033
+cell_4,fibroblast,0.10023975328361033
+cell_5,endothelial cell,0.09891451695024364
+cell_6,vascular associated smooth muscle cell,0.010160380443482636
+cell_7,fibroblast,0.09979346737940502
+cell_8,myofibroblast cell,0.14524660135893214
+cell_9,vascular associated smooth muscle cell,0.10754349834241234
+cell_10,pericyte,0.033226370760138756
+cell_11,vein endothelial cell,0.07474885403463659
+cell_12,endothelial cell,0.11239022310094482
+cell_13,endothelial cell,0.1039501615464662
+cell_14,vein endothelial cell,0.12491717999246442
+cell_15,endothelial cell,0.19587921720536094
+cell_16,endothelial cell,0.09524964145026289
+cell_17,vein endothelial cell,0.15985391480309363
+cell_18,endothelial cell,0.15158482399546364
+cell_19,endothelial cell,0.13009464634111267
+cell_20,endothelial cell,0.11905572757173333
+cell_21,pericyte,0.10344534825412051
+cell_22,pericyte,0.10998009851735166
+cell_23,pericyte,0.10839860496650633
+cell_24,fibroblast,0.05321085603500253
+cell_25,endothelial cell,0.12012008220550323
+cell_26,vein endothelial cell,0.15324930199819553
+cell_27,endothelial cell,0.14876425873680402
+cell_28,vein endothelial cell,0.10383445048617675
+cell_29,endothelial cell,0.14199332759614716
+cell_30,vein endothelial cell,0.12715331992833284
+cell_31,endothelial cell,0.15019282357021724
+cell_32,endothelial cell,0.08285624453364479
+cell_33,vein endothelial cell,0.1231812159974258
+cell_34,fibroblast,0.10534362994853853
+cell_35,endothelial cell,0.08811751245195197
+cell_36,endothelial cell,0.047218988501602895
+cell_37,endothelial cell of vascular tree,0.09015054942581043
+cell_38,fibroblast,0.16961961131172562
+cell_39,pericyte,0.10293289369658923
+cell_40,vein endothelial cell,0.04122501978959904
+cell_41,endothelial cell of vascular tree,0.020200089538949553
+cell_42,fibroblast,0.12623766477623036
+cell_43,myofibroblast cell,0.0629260171600307
+cell_44,endothelial cell,0.1511632590975457
+cell_45,endothelial cell,0.14323494382727148
+cell_46,vein endothelial cell,0.12281879428093444
+cell_47,pericyte,0.045816783545340786
+cell_48,pericyte,0.11776053588385488
+cell_49,endothelial cell of vascular tree,0.07296214147748167
+cell_50,endothelial cell,0.11780276346660622
+cell_51,endothelial cell of artery,0.03270255554758525
+cell_52,vein endothelial cell,0.06240112710422143
+cell_53,endothelial cell,0.13176686716383584
+cell_54,vein endothelial cell,0.13854464888945267
+cell_55,endothelial cell,0.10835805474394644
+cell_56,myofibroblast cell,0.14869601479662287
+cell_57,fibroblast,0.07452151018364093
+cell_58,pericyte,0.06316815185827197
+cell_59,endothelial cell of artery,0.08330664898897377
+cell_60,vein endothelial cell,0.06286416683656343
+cell_61,endothelial cell,0.10574619488197498
+cell_62,endothelial cell,0.12212453369418533
+cell_63,endothelial cell,0.08004762937204048
+cell_64,fibroblast,0.07990460006939425
+cell_65,endothelial cell,0.10363600710143889
+cell_66,myofibroblast cell,0.04421490981882696
+cell_67,vein endothelial cell,0.13638604087936593
+cell_68,endothelial cell,0.11554311989326646
+cell_69,endothelial cell,0.1260315223163367
+cell_70,fibroblast,0.0759052157199364
+cell_71,endothelial cell of artery,0.017599526896975838
+cell_72,endothelial cell of vascular tree,0.016524091478214233
+cell_73,vein endothelial cell,0.0997020121324884
+cell_74,vein endothelial cell,0.14181879391702096
+cell_75,fibroblast,0.07010861622708947
+cell_76,fibroblast,0.08235448363223156
+cell_77,myofibroblast cell,0.09798267763279192
+cell_78,endothelial cell,0.12932412483981634
+cell_79,endothelial cell,0.0964804532026169
+cell_80,vein endothelial cell,0.11852826305699428
+cell_81,endothelial cell,0.08782217023471779
+cell_82,endothelial cell of artery,0.035319823618254344
