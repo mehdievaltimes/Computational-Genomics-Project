@@ -74,10 +74,6 @@ Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were ab
 
 ![Per-cell confidence map](figures/confidence_map.png)
 
-Each cell is coloured by its best cosine similarity score after the best-performing correction experiment. Red cells scored below the 25th-percentile threshold; green cells scored above it.
-
-![Flagged cells overlay](figures/flagged_cells_overlay.png)
-
 ### Cosine similarity before vs. after correction
 
 ![Before/after cosine similarity](figures/cosine_before_after_best_histogram.png)
