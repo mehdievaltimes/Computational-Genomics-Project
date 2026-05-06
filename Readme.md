@@ -4,6 +4,8 @@ This project builds a baseline pipeline for spatial transcriptomics on a human b
 
 In practice this separation breaks down: segmentation errors propagate directly into misclassification, and a sparse gene panel compresses all similarity scores toward zero, making assignments systematically ambiguous. We show this empirically and implement a post-processing ablation that uses biological signal as feedback to identify and selectively re-segment low-confidence cells.
 
+The assignment problem is framed as a **segmentation quality** problem, not a cosine-similarity optimisation. A low or ambiguous similarity score is treated as a symptom that Cellpose captured the wrong transcript mix for that cell — cosine similarity is a proxy for boundary quality, not an end goal. A gene-subset experiment (NB04) confirms this: restricting the comparison to 21 canonical marker genes lifts mean similarity from 0.101 to 0.366 and increases assignment margins ~15× for cells with detectable marker signal, demonstrating that the full 5,054-gene space dilutes discriminative signal with noise. Cells that show zero counts even in this focused subset are the strongest evidence of a segmentation problem and are used as high-priority re-segmentation candidates in the ablation (NB05).
+
 ## Pipeline overview
 
 ```
@@ -16,7 +18,11 @@ transcripts.zarr      ──►  (Cellpose + transcript assignment)
                           03_cosine_similarity  ──► cell_type_predictions.csv
                                                             │
                                                             ▼
-                          04_evaluation_and_ablation
+                          04_gene_subset_cosine_similarity
+                               ──► subset predictions + gene-subset confidence signals
+                                                            │
+                                                            ▼
+                          05_evaluation_and_ablation
                                ──► refined predictions + QC figures + ablation metrics
 ```
 
@@ -30,6 +36,7 @@ transcripts.zarr      ──►  (Cellpose + transcript assignment)
 
 **Cosine similarity:** Best-match scores ranged from roughly **0.07–0.15**, with a **median of 0.104**. This is far below what typical dense-panel pipelines achieve. The margin between the top two cell-type matches was near zero for most cells, making assignments inherently ambiguous regardless of threshold.
 
+**Gene subset:** Restricting cosine similarity to 21 canonical marker genes raised mean similarity to **0.366** and mean margin to **0.058** for the 31 cells with detectable signal in that subset. The other 51 cells showed zero counts across all marker genes — pointing to segmentation noise rather than typing uncertainty as the dominant source of ambiguity.
 
 **Predicted cell type distribution:**
 
@@ -48,7 +55,7 @@ transcripts.zarr      ──►  (Cellpose + transcript assignment)
 
 The heavy skew toward endothelial subtypes likely reflects both the stromal-vascular composition of the breast tissue region captured in the crop and the limited discriminative power of the sparse panel between closely related cell types.
 
-**Ablation (post-processing):** Five re-segmentation strategies were tested on low-confidence cells. Each re-ran Cellpose locally around flagged cells using a smaller diameter (20 px vs 30 px) and accepted the new segmentation only if cosine similarity improved. Results varied across patch size, acceptance tolerance, and cell selection strategy — see the Results section for detail. The global shift in mean cosine similarity was modest across all experiments, consistent with a fundamental signal-limitation rather than a correctable segmentation problem.
+**Ablation (post-processing):** Seven re-segmentation strategies were tested on low-confidence cells. Five use the full-gene confidence criterion (cosine score and margin below calibrated 25th-percentile thresholds); two new experiments use a combined criterion that additionally flags cells with no signal in the 21-gene marker subset, directly connecting the gene-subset analysis to the correction loop. Each experiment re-ran Cellpose locally around flagged cells using a smaller diameter (20 px vs 30 px) and accepted the new segmentation only if cosine similarity improved. Results varied across patch size, acceptance tolerance, and cell selection strategy — see the Results section for detail. The global shift in mean cosine similarity was modest across all experiments, consistent with a fundamental signal-limitation rather than a correctable segmentation problem.
 
 ![Ablation experiment summary](figures/ablation_experiment_summary.png)
 
@@ -68,11 +75,21 @@ The heatmap shows mean expression of canonical marker groups per predicted cell 
 
 Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were absent from the shared gene set, limiting what the heatmap can confirm. 
 
-###The degree to which the expected diagonal pattern appears, and which cell types show the clearest enrichment in their expected marker groups, should be described here after running notebook 04.
+###The degree to which the expected diagonal pattern appears, and which cell types show the clearest enrichment in their expected marker groups, should be described here after running notebook 05.
+
+### Gene subset analysis
+
+Restricting cosine similarity to 21 canonical marker genes (NB04) produced a ~3.6× increase in mean similarity scores and a ~15× increase in assignment margins for the 31 cells with detectable marker signal. The 51 cells that showed no counts across all 21 genes are flagged as `unassigned_subset_no_signal` — they are treated not as unclassifiable but as the highest-priority re-segmentation candidates, on the grounds that a correctly segmented cell should capture at least some expression of its marker genes.
+
+A second, data-driven subset of the top 100 highest-variance genes across the prototype profiles is also computed and compared side-by-side. Both modes write separate output files; neither overwrites the full-gene baseline from NB03.
+
+![Gene subset vs full-gene confidence](figures/gene_subset_vs_fullgene_confidence.png)
 
 ### Confidence and spatial distribution
 
 ![Per-cell confidence map](figures/confidence_map.png)
+
+The spatial overlay uses three colours: cells meeting the full-gene confidence threshold (green), cells flagged by the full-gene criterion alone (red), and cells flagged specifically by the gene-subset no-signal criterion (orange). Orange cells are the re-segmentation targets unique to the subset-driven ablation experiments.
 
 ### Cosine similarity before vs. after correction
 
@@ -85,12 +102,13 @@ Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were ab
 ```
 Computational-Genomics-Project/
 ├── notebooks/
-│   ├── 01_build_prototypes.ipynb           # scRNA-seq → per-cell-type prototype profiles
-│   ├── 02_assign_transcripts.ipynb         # Cellpose segmentation + transcript assignment
-│   ├── 03_cosine_similarity.ipynb          # cosine similarity + cell-type labelling
-│   └── 04_evaluation_and_ablation.ipynb    # validation, marker eval, ablation study
-├── data/                                   # all data files — git-ignored
-├── outputs/                                # figures and QC plots — git-ignored
+│   ├── 01_build_prototypes.ipynb              # scRNA-seq → per-cell-type prototype profiles
+│   ├── 02_assign_transcripts.ipynb            # Cellpose segmentation + transcript assignment
+│   ├── 03_cosine_similarity.ipynb             # cosine similarity + cell-type labelling
+│   ├── 04_gene_subset_cosine_similarity.ipynb # focused gene subset + confidence signals
+│   └── 05_evaluation_and_ablation.ipynb       # validation, marker eval, ablation study
+├── data/                                      # all data files — git-ignored
+├── outputs/                                   # figures and QC plots — git-ignored
 ├── requirements.txt
 └── README.md
 ```
@@ -103,7 +121,7 @@ Place the [following files](https://drive.google.com/file/d/1Vd8j8MCcDgtq9qwLY5X
 |---|---|---|
 | `breast_reference.h5ad` | scRNA-seq reference (AnnData, human breast cancer, 104,032 cells × 37,361 genes) | 01 |
 | `transcripts.zarr` | Xenium transcript table — 386M transcripts, 8,455 unique genes | 02 |
-| `morphology_focus/` | Xenium morphology images (OME-TIFF, 74,945 × 51,265 px) | 02, 04 |
+| `morphology_focus/` | Xenium morphology images (OME-TIFF, 74,945 × 51,265 px) | 02, 05 |
 
 All intermediate files (`prototypes_normalized.csv`, `cell_expression_aligned.csv`, `masks_center.npy`, etc.) are generated by running the notebooks in order.
 
@@ -130,9 +148,12 @@ Each notebook has a **Config** cell near the top — set paths there before runn
 | 02 | `CELL_DIAMETER` | `30` | Expected cell diameter for Cellpose (pixels) |
 | 02 | `MICRONS_PER_PIXEL` | `0.2125` | Xenium physical pixel size — required to align transcript coordinates (microns) with image coordinates (pixels) |
 | 03 | `HEATMAP_N_CELLS` | `50` | Number of cells shown in the similarity heatmap |
-| 04 | `CONFIDENCE_THRESHOLD` | `0.5` | Absolute threshold — flags 100% of cells under this panel; kept for reference only |
-| 04 | `MARGIN_THRESHOLD` | `0.05` | Gap between top two prototype scores — the primary confidence signal |
-| 04 | `RETRY_DIAMETER` | `20` | Smaller cell diameter used when re-segmenting low-confidence cells |
+| 04 | `MODES_TO_RUN` | `["marker_panel", "top_reference_variance"]` | Both subset strategies run back-to-back; outputs are saved separately and neither overwrites NB03 results |
+| 04 | `TOP_N_REFERENCE_GENES` | `100` | Number of genes selected by the variance-based mode |
+| 05 | `SUBSET_TAG` | `marker_subset` | Which NB04 output to use as the subset confidence criterion; change to `top100_variance` to use the data-driven subset instead |
+| 05 | `CONFIDENCE_THRESHOLD` | `0.5` | Absolute threshold — flags 100% of cells under this panel; kept for reference only |
+| 05 | `MARGIN_THRESHOLD` | `0.05` | Gap between top two prototype scores — the primary confidence signal |
+| 05 | `RETRY_DIAMETER` | `20` | Smaller cell diameter used when re-segmenting low-confidence cells |
 
 ### Ablation experiment configurations
 
@@ -143,10 +164,14 @@ Each notebook has a **Config** cell near the top — set paths there before runn
 | `relaxed_patch80_diam20` | 80 | 20 | 0.0 | 25th-percentile low-confidence |
 | `larger_patch150_diam20` | 150 | 20 | 0.0 | 25th-percentile low-confidence |
 | `worst25_patch150_diam20` | 150 | 20 | 0.0 | Bottom 25% of scores only |
+| `subset_driven_patch80_diam20` | 80 | 20 | 0.0 | Combined: low-confidence OR no subset signal |
+| `subset_driven_patch150_diam20` | 150 | 20 | 0.0 | Combined: low-confidence OR no subset signal |
+
+The two subset-driven experiments extend the candidate pool by including cells that failed to produce any signal in the 21-gene marker subset, even if their full-gene cosine score was not flagged as low-confidence. This is the most direct application of the NB04 findings to the re-segmentation loop.
 
 ## A note on cosine similarity scores
 
-Absolute cosine scores in this pipeline are low (≈0.07–0.15, median 0.104). The shared gene space covers only 5,054 of the 37,361 genes in the scRNA-seq reference. With most transcriptomic signal absent, even a correct cell-type match produces a low score in absolute terms. **Relative comparisons (margin, rank) are more informative than absolute thresholds here.**
+Absolute cosine scores in this pipeline are low (≈0.07–0.15, median 0.104). The shared gene space covers only 5,054 of the 37,361 genes in the scRNA-seq reference. With most transcriptomic signal absent, even a correct cell-type match produces a low score in absolute terms. **Relative comparisons (margin, rank) are more informative than absolute thresholds here.** The gene-subset experiment in NB04 isolates this effect directly: restricting to 21 discriminative genes raises median similarity to ~0.37 for cells that express them, confirming the full-gene compression is a gene-space problem rather than a typing failure.
 
 ## Limitations
 
@@ -156,7 +181,7 @@ Absolute cosine scores in this pipeline are low (≈0.07–0.15, median 0.104). 
 
 **Single crop.** Results are from a 512×512 centre crop — 82 cells from a dataset spanning tens of thousands. Representativeness of the broader tissue is unknown.
 
-**Segmentation–expression coupling.** Any segmentation error directly distorts the expression profile of the affected cell. This motivates the post-processing step but also limits how much it can recover.
+**Segmentation–expression coupling.** Any segmentation error directly distorts the expression profile of the affected cell. This motivates the post-processing step but also limits how much it can recover. The gene-subset analysis suggests that for many cells the issue is incomplete transcript capture rather than a misidentified boundary — a distinction that the ablation approach cannot fully resolve at this panel depth.
 
 ## Background
 

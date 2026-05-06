@@ -1,0 +1,83 @@
+,predicted_cell_type,best_similarity,margin,subset_signal_sum
+cell_1,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,7
+cell_2,unassigned_subset_no_signal,,,0
+cell_3,vein endothelial cell,0.22802375841861108,0.011555290824385916,8
+cell_4,vein endothelial cell,0.7126154442959783,0.07548348797529669,5
+cell_5,endothelial cell of vascular tree,0.019023769864139006,0.008586526737593431,6
+cell_6,unassigned_subset_no_signal,,,0
+cell_7,endothelial cell of vascular tree,0.014119834866991622,8.387460591651255e-05,2
+cell_8,myofibroblast cell,0.6960346220452439,0.029697198737106745,6
+cell_9,unassigned_subset_no_signal,,,0
+cell_10,unassigned_subset_no_signal,,,0
+cell_11,unassigned_subset_no_signal,,,0
+cell_12,unassigned_subset_no_signal,,,0
+cell_13,unassigned_subset_no_signal,,,0
+cell_14,unassigned_subset_no_signal,,,0
+cell_15,unassigned_subset_no_signal,,,0
+cell_16,unassigned_subset_no_signal,,,0
+cell_17,vein endothelial cell,0.9497840403522633,0.037772663138929574,9
+cell_18,endothelial cell of vascular tree,0.01515873690885349,0.005174820449850409,9
+cell_19,endothelial cell of vascular tree,0.010412619585243256,0.005078273626747878,3
+cell_20,unassigned_subset_no_signal,,,0
+cell_21,endothelial cell of vascular tree,0.01580048096113975,0.008567392196878205,4
+cell_22,vascular associated smooth muscle cell,0.12125818739333272,0.030902743429553597,7
+cell_23,unassigned_subset_no_signal,,,0
+cell_24,endothelial cell of vascular tree,0.010412619585243256,0.005078273626747878,6
+cell_25,unassigned_subset_no_signal,,,0
+cell_26,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,2
+cell_27,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,4
+cell_28,vein endothelial cell,0.7126154442959783,0.07548348797529669,4
+cell_29,unassigned_subset_no_signal,,,0
+cell_30,unassigned_subset_no_signal,,,0
+cell_31,endothelial cell of artery,0.7244048342638373,0.06616596847054079,6
+cell_32,unassigned_subset_no_signal,,,0
+cell_33,unassigned_subset_no_signal,,,0
+cell_34,unassigned_subset_no_signal,,,0
+cell_35,unassigned_subset_no_signal,,,0
+cell_36,unassigned_subset_no_signal,,,0
+cell_37,unassigned_subset_no_signal,,,0
+cell_38,unassigned_subset_no_signal,,,0
+cell_39,unassigned_subset_no_signal,,,0
+cell_40,myofibroblast cell,0.004435856991393014,0.00024221774071468433,4
+cell_41,unassigned_subset_no_signal,,,0
+cell_42,endothelial cell of artery,0.42539249324231826,0.03432582677346063,12
+cell_43,unassigned_subset_no_signal,,,0
+cell_44,unassigned_subset_no_signal,,,0
+cell_45,unassigned_subset_no_signal,,,0
+cell_46,unassigned_subset_no_signal,,,0
+cell_47,unassigned_subset_no_signal,,,0
+cell_48,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,3
+cell_49,unassigned_subset_no_signal,,,0
+cell_50,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,4
+cell_51,unassigned_subset_no_signal,,,0
+cell_52,unassigned_subset_no_signal,,,0
+cell_53,myofibroblast cell,0.004435856991393014,0.00024221774071468433,5
+cell_54,unassigned_subset_no_signal,,,0
+cell_55,vascular associated smooth muscle cell,0.27749342405372945,0.15801617568771872,13
+cell_56,unassigned_subset_no_signal,,,0
+cell_57,fibroblast,0.6387237258432997,0.4545665410154071,6
+cell_58,unassigned_subset_no_signal,,,0
+cell_59,endothelial cell of vascular tree,0.014119834866991622,8.387460591651255e-05,6
+cell_60,unassigned_subset_no_signal,,,0
+cell_61,vein endothelial cell,0.7126154442959783,0.07548348797529669,4
+cell_62,unassigned_subset_no_signal,,,0
+cell_63,vein endothelial cell,0.7126154442959783,0.07548348797529669,3
+cell_64,unassigned_subset_no_signal,,,0
+cell_65,unassigned_subset_no_signal,,,0
+cell_66,unassigned_subset_no_signal,,,0
+cell_67,vein endothelial cell,0.6443954709106585,0.0015869723478860731,11
+cell_68,unassigned_subset_no_signal,,,0
+cell_69,endothelial cell of artery,0.7244048342638373,0.06616596847054079,5
+cell_70,unassigned_subset_no_signal,,,0
+cell_71,unassigned_subset_no_signal,,,0
+cell_72,unassigned_subset_no_signal,,,0
+cell_73,unassigned_subset_no_signal,,,0
+cell_74,unassigned_subset_no_signal,,,0
+cell_75,unassigned_subset_no_signal,,,0
+cell_76,myofibroblast cell,0.6960346220452439,0.029697198737106745,5
+cell_77,vascular associated smooth muscle cell,0.3204698299053293,0.08509059525620294,2
+cell_78,vein endothelial cell,0.3422991888843564,0.022569715747519814,18
+cell_79,unassigned_subset_no_signal,,,0
+cell_80,unassigned_subset_no_signal,,,0
+cell_81,unassigned_subset_no_signal,,,0
+cell_82,unassigned_subset_no_signal,,,0

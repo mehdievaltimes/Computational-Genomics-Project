@@ -1,0 +1,7 @@
+metric,value
+gene_subset_mode,marker_subset
+n_subset_genes,21
+n_shared_genes,5054
+fraction_of_shared_genes,0.004155124653739612
+n_marker_genes_present,21
+n_marker_genes_missing,12
