@@ -1,15 +1,24 @@
-# ignore venv
+# Virtual environments
 venv/
-# ignore data files
-data/
-#ignore output files
+.venv/
 
-# ignore Jupyter notebook checkpoints
-.ipynb_checkpoints
-# ignore Python cache files
+# Local data files
+data/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache files
 __pycache__/
 *.pyc
-# ignore logs
+
+# Logs
 logs/
-# ignore any files/folders starting with .
-.*
+
+# Local editor and environment files
+.DS_Store
+.env
+.vscode/
+.claude/
+.ipython/
+.mplconfig/
