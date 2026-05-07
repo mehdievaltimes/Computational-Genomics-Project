@@ -3,6 +3,6 @@ baseline_no_correction,0,38,0,0
 larger_patch150_diam20,14,0,10,14
 relaxed_patch80_diam20,11,0,6,21
 strict_patch80_diam20,10,0,6,22
-subset_driven_patch150_diam20,23,0,16,25
-subset_driven_patch80_diam20,14,0,9,41
+subset_driven_patch150_diam20,14,0,10,14
+subset_driven_patch80_diam20,11,0,6,21
 worst25_patch150_diam20,9,0,7,5
