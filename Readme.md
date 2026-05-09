@@ -51,25 +51,25 @@ transcripts.zarr      ──►  (Cellpose + transcript assignment)
 | endothelial cell of vascular tree | 4 |
 | vascular associated smooth muscle cell | 2 |
 
-![Predicted cell type distribution](outputs/cell_type_counts.png)
+![Predicted cell type distribution](outputs/figures/cell_type_counts.png)
 
 The heavy skew toward endothelial subtypes likely reflects both the stromal-vascular composition of the breast tissue region captured in the crop and the limited discriminative power of the sparse panel between closely related cell types.
 
 **Ablation (post-processing):** Seven re-segmentation strategies were tested on low-confidence cells. Five use the full-gene confidence criterion (cosine score and margin below calibrated 25th-percentile thresholds); two new experiments use a combined criterion that additionally flags cells flagged by the top-100 variance subset, directly connecting the gene-subset analysis to the correction loop. Each experiment re-ran Cellpose locally around flagged cells using a smaller diameter (20 px vs 30 px) and accepted the new segmentation only if cosine similarity improved. Results varied across patch size, acceptance tolerance, and cell selection strategy — see the Results section for detail. The global shift in mean cosine similarity was modest across all experiments, consistent with a fundamental signal-limitation rather than a correctable segmentation problem.
 
-![Ablation experiment summary](outputs/ablation_experiment_summary.png)
+![Ablation experiment summary](outputs/figures/ablation_experiment_summary.png)
 
 ## Results
 
 ### Segmentation
 
-![Cellpose segmentation overlay](outputs/overlay_center.png)
+![Cellpose segmentation overlay](outputs/figures/overlay_center.png)
 
 Cellpose was run on a 512×512 centre crop of the morphology image (`morphology_focus_0000.ome.tif`) with `CELL_DIAMETER=30`. 82 cells were detected. Transcript coordinates (stored in microns) were converted to pixel space using the physical pixel size (0.2125 µm/px) before assignment.
 
 ### Marker gene validation
 
-![Marker gene heatmap](outputs/marker_gene_heatmap.png)
+![Marker gene heatmap](outputs/figures/marker_gene_heatmap.png)
 
 The heatmap shows mean expression of canonical marker groups per predicted cell type. A well-calibrated classifier would show a diagonal pattern — each marker group peaking in its corresponding predicted type. The eight marker groups evaluated were: fibroblast (`COL1A1`, `COL1A2`, `DCN`, `LUM`, `PDGFRA`), myofibroblast (`ACTA2`, `TAGLN`, `MYL9`, `COL3A1`), endothelial (`PECAM1`, `VWF`, `KDR`, `RAMP2`, `ENG`), pericyte (`RGS5`, `PDGFRB`, `MCAM`, `CSPG4`), vascular smooth muscle (`ACTA2`, `MYH11`, `TAGLN`, `MYLK`), cycling (`MKI67`, `TOP2A`, `UBE2C`, `CENPF`), immune (`PTPRC`, `CD3D`, `CD3E`, `MS4A1`, `LYZ`), and epithelial (`EPCAM`, `KRT8`, `KRT18`, `KRT19`).
 
@@ -81,17 +81,17 @@ Several canonical markers — including `COL1A1`, `ACTA2`, and `VWF` — were ab
 
 NB04 tests whether restricting cosine similarity to a focused gene subset improves segmentation-quality assessment. The primary approach selects the top 100 genes by variance across the scRNA-seq prototype profiles — genes that vary most between cell-type means are, by definition, the most discriminative for this dataset. This selection is entirely data-driven and requires no external annotation or prior biological knowledge. A marker-panel variant (21 canonical marker genes) is also computed for comparison; both modes write separate output files and neither overwrites the full-gene baseline from NB03. The top-100 variance subset is the one used to drive the ablation in NB05.
 
-![Gene subset vs full-gene confidence](outputs/gene_subset_vs_fullgene_confidence.png)
+![Gene subset vs full-gene confidence](outputs/figures/gene_subset_vs_fullgene_confidence.png)
 
 ### Confidence and spatial distribution
 
-![Per-cell confidence map](outputs/confidence_map.png)
+![Per-cell confidence map](outputs/figures/confidence_map.png)
 
 The spatial overlay uses three colours: cells meeting the full-gene confidence threshold (green), cells flagged by the full-gene criterion alone (red), and cells additionally flagged by the top-100 variance subset criterion (orange). Orange cells are the re-segmentation targets unique to the subset-driven ablation experiments.
 
 ### Cosine similarity before vs. after correction
 
-![Before/after cosine similarity](outputs/cosine_before_after_best_histogram.png)
+![Before/after cosine similarity](outputs/figures/cosine_before_after_best_histogram.png)
 
 ---
 
